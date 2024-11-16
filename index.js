@@ -82,7 +82,7 @@ async function startBot() {
         });
         console.log('Bot logged in successfully!');
         await postRandomMessage();
-        setInterval(postRandomMessage, 1000);
+        setInterval(postRandomMessage, 25000);
     } catch (error) {
         console.error('Error starting bot:', error.message);
     }
