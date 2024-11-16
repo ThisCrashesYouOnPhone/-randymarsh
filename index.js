@@ -74,6 +74,18 @@ async function postRandomMessage() {
     const message = messages[Math.floor(Math.random() * messages.length)];
     await createPost(message, MESSAGE_IMAGE_MAP[message]);
 }
+// Set up the Express server
+const app = express();
+
+// Health check route to make sure the service is running
+app.get('/health', (req, res) => res.send('Bot is running!'));
+
+// Start the Express server and begin bot execution
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server is listening on port ${port}`);
+    startBot(); // Start the bot after the server is up
+});
 
 async function startBot() {
     try {
