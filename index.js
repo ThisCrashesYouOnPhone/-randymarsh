@@ -1,6 +1,7 @@
 import { BskyAgent, RichText } from '@atproto/api';
 import dotenv from 'dotenv';
 import axios from 'axios';
+import express from 'express';
 dotenv.config();
 
 // Initialize BlueSky agent
